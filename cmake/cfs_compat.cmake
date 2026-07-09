@@ -1,8 +1,9 @@
 #
 # Compatibility shims for building against older cFE versions (e.g. draco-rc5)
 #
-# This file should be included from both a mission's mission_build_custom.cmake
-# and arch_build_custom.cmake so the shims are available in both build scopes.
+# Modules calling the shimmed functions should `include(cfs_compat)` before the
+# first call. The mission must have this directory on CMAKE_MODULE_PATH, e.g.:
+#   list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/../libs/fprime_cfs/cmake")
 #
 
 # generate_configfile_set() was introduced after draco. Provide an equivalent
